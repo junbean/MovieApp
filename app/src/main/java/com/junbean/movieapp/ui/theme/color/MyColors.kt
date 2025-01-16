@@ -1,12 +1,11 @@
 package com.junbean.movieapp.ui.theme.color
 
-import android.provider.CalendarContract
+import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Color
-import androidx.wear.compose.material.Colors
 
 
 data class MyColors(
-    val material: Colors,
+    val material: ColorScheme,
     val tertiary: Color = material.primary,
     val onPrimaryAlt: Color = material.onPrimary,
     val success: Color = Color.Green,
@@ -20,9 +19,9 @@ data class MyColors(
     val progressItemColor: Color = Color.Black
 ) {
     val primary: Color get() = material.primary
-    val primaryVariant: Color get() = material.primaryVariant
+    // val primaryVariant: Color get() = material.primaryVariant
     val secondary: Color get() = material.secondary
-    val secondaryVariant: Color get() = material.secondaryVariant
+    // val secondaryVariant: Color get() = material.secondaryVariant
     val background: Color get() = material.background
     val surface: Color get() = material.surface
     val error: Color get() = material.error
@@ -31,5 +30,5 @@ data class MyColors(
     val onBackground: Color get() = material.onBackground
     val onSurface: Color get() = material.onSurface
     val onError: Color get() = material.onError
-    val isLight: Boolean get() = material.isLight
+    // val isLight: Boolean get() = material.isLight
 }
