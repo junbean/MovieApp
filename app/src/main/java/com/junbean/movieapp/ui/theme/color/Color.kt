@@ -59,6 +59,37 @@ sealed class ColorSet {
             )
         )
     }
+
+    data object Blue: ColorSet() {
+        override var LightColors = MyColors(
+            material = lightColorScheme(
+                primary = Blue400,
+                secondary = Red900,
+                surface = White,
+                onSurface = Purple900,
+                background = White,
+                onBackground = Purple900,
+                error = Red400,
+                onPrimary = White
+            ),
+            success = Green400,
+            disabledSecondary = Purple700,
+            textFiledBackground = Grey200
+        )
+        override var DarkColors = MyColors(
+            material = darkColorScheme(
+                primary = Red900,
+                secondary = Blue400,
+                surface = White,
+                onSurface = Purple900,
+                background = White,
+                onBackground = Purple900,
+                error = Red400,
+                onPrimary = White
+            )
+        )
+
+    }
 }
 
 /*
