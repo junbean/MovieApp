@@ -15,11 +15,11 @@ import com.junbean.movieapp.ui.theme.Paddings
 
 @Composable
 fun CategoryRow() {
-    Column() {
+    Column {
         CategoryTitle("Action")
         LazyRow(
             contentPadding = PaddingValues(
-                horizontal = 10.dp
+                horizontal = Paddings.large
             )
         ) {
             item {
