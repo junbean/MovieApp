@@ -1,4 +1,4 @@
-package com.junbean.movieapp.feature.feed
+package com.junbean.movieapp.features.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import com.junbean.movieapp.ui.theme.MovieAppTheme
 
-class FeedFragment: Fragment() {
+class DetailFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,10 +19,9 @@ class FeedFragment: Fragment() {
         return ComposeView(requireContext()).apply {
             setContent {
                 MovieAppTheme {
-                    Text("Feed Fragment")
+                    Text("Detail Fragment")
                 }
             }
         }
     }
-
 }

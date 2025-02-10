@@ -1,9 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
     id("androidx.navigation.safeargs.kotlin")
+
     id("com.google.dagger.hilt.android")
-    kotlin("kapt")
+    id("kotlin-kapt")
 }
 
 android {
@@ -41,6 +43,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -55,11 +58,16 @@ android {
 val coilVersion: String = "3.0.4"
 val daggerHiltVersion: String = "2.48"
 val navVersion: String = "2.8.6"
+val timberVersion: String = "5.0.1"
+val lifecycleVersion: String = "2.8.7"
+val retrofitVersion: String = "2.11.0"
+val okHttpVersion: String = "4.11.0"
+val gsonVersion: String = "2.10.1"
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
@@ -75,6 +83,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+
     // Coil
     implementation("io.coil-kt.coil3:coil-compose:$coilVersion")
 
@@ -85,8 +94,26 @@ dependencies {
 
     // dagger hilt
     implementation("com.google.dagger:hilt-android:$daggerHiltVersion")
+    implementation("androidx.hilt:hilt-navigation-fragment:1.2.0")
     kapt("com.google.dagger:hilt-compiler:$daggerHiltVersion")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.okhttp3:logging-interceptor:$okHttpVersion")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion")
+    // implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+
+    // Gson
+    implementation("com.google.code.gson:gson:$gsonVersion")
+
+    // Timer
+    implementation("com.jakewharton.timber:timber:$timberVersion")
 }
+
+kapt {
+    correctErrorTypes = true
+}
+
 
 /*
 앱 수준의 build.gradle

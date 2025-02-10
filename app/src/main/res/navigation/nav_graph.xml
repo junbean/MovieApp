@@ -6,12 +6,12 @@
 
     <fragment
         android:id="@+id/feed_fragment"
-        android:name="com.junbean.movieapp.feature.feed.FeedFragment"
+        android:name="com.junbean.movieapp.features.feed.FeedFragment"
         android:label="Feed" />
 
     <fragment
         android:id="@+id/detail_fragment"
-        android:name="com.junbean.movieapp.feature.detail.DetailFragment"
+        android:name="com.junbean.movieapp.features.detail.DetailFragment"
         android:label="Detail" />
 
 </navigation>
