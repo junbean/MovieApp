@@ -12,13 +12,22 @@ import com.junbean.movieapp.R
 
 
 private val spoqaBold = FontFamily(
-    Font(R.font.spoqa_han_sans_neo_bold, FontWeight.Bold)
+    Font(
+        R.font.spoqa_han_sans_neo_bold,
+        FontWeight.Bold
+    )
 )
 private val spoqaRegular = FontFamily(
-    Font(R.font.spoqa_han_sans_neo_regular, FontWeight.Normal)
+    Font(
+        R.font.spoqa_han_sans_neo_regular,
+        FontWeight.Normal
+    )
 )
 private val spoqaThin = FontFamily(
-    Font(R.font.spoqa_han_sans_neo_thin, FontWeight.Thin)
+    Font(
+        R.font.spoqa_han_sans_neo_thin,
+        FontWeight.Thin
+    )
 )
 
 val Typography = Typography(
@@ -94,7 +103,7 @@ val Typography = Typography(
 )
 
 val Typography.h5Title: TextStyle
-    @Composable get() = titleLarge.copy(
+    @Composable get() = headlineSmall.copy(
         fontSize = 24.sp
     )
 

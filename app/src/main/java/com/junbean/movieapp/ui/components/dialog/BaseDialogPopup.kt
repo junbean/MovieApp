@@ -8,12 +8,15 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import com.junbean.movieapp.ui.models.dialog.DialogButton
 import com.junbean.movieapp.ui.components.dialog.components.button.DialogButtonsColumn
 import com.junbean.movieapp.ui.models.dialog.DialogContent
 import com.junbean.movieapp.ui.components.dialog.components.content.DialogContentWrapper
 import com.junbean.movieapp.ui.models.dialog.DialogTitle
 import com.junbean.movieapp.ui.components.dialog.components.title.DialogTitleWrapper
+import com.junbean.movieapp.ui.models.dialog.DialogText
+import com.junbean.movieapp.ui.theme.MovieAppTheme
 import com.junbean.movieapp.ui.theme.Paddings
 
 @Composable
@@ -52,16 +55,58 @@ fun BaseDialogPopup(
     }
 }
 
-/*
-Card(
-    modifier = Modifier.fillMaxWidth(),
-    elevation = CardDefaults.cardElevation(Paddings.none),
-    backgroundColor = CardDefaults.cardColors(
-        contentColor = ,
-        containerColor = MaterialTheme.colorScheme.background,
-    ) ,
-    shape = MaterialTheme.shapes.large
-) {
+@Preview
+@Composable
+fun Preview() {
+    MovieAppTheme {
+        BaseDialogPopup(
+            dialogTitle = DialogTitle.Header("TITLE"),
+            dialogContent = DialogContent.Large(
+                DialogText.Default("asdfg asdfg asdfg asdfg asdfg asdfg asdfg asdfg asdfg asdfg asdfg")
+            ),
+            buttons = listOf(
+                DialogButton.Primary("Okay") {
 
+                }
+            )
+        )
+    }
 }
-*/
+
+
+@Preview
+@Composable
+fun Preview2() {
+    MovieAppTheme {
+        BaseDialogPopup(
+            dialogTitle = DialogTitle.Large("TITLE"),
+            dialogContent = DialogContent.Large(
+                DialogText.Default("asdfg asdfg asdfg asdfg asdfg asdfg asdfg asdfg asdfg asdfg asdfg")
+            ),
+            buttons = listOf(
+                DialogButton.Secondary("Okay") { },
+                DialogButton.UnderlinedText("Cancel") { }
+            )
+        )
+    }
+}
+
+@Preview
+@Composable
+fun Preview3() {
+    MovieAppTheme {
+        BaseDialogPopup(
+            dialogTitle = DialogTitle.Large("TITLE"),
+            dialogContent = DialogContent.Rating(
+                DialogText.Rating(
+                    text = "Jurassic Park",
+                    rating  = 8.2f
+                )
+            ),
+            buttons = listOf(
+                DialogButton.Primary("Okay") { },
+                DialogButton.Secondary("Cancel") { }
+            )
+        )
+    }
+}

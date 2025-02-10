@@ -38,7 +38,8 @@ fun UnderlinedTextButton(
             containerColor = MaterialTheme.myColors.background,
             disabledContentColor = MaterialTheme.myColors.background,
             disabledContainerColor = MaterialTheme.myColors.disabledSecondary
-        )
+        ),
+        elevation = null
     ) {
         Row(
             horizontalArrangement = Arrangement.Center,
