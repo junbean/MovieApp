@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("androidx.navigation.safeargs.kotlin")
+    id("com.google.dagger.hilt.android")
+    kotlin("kapt")
 }
 
 android {
@@ -50,6 +53,8 @@ android {
 }
 
 val coilVersion: String = "3.0.4"
+val daggerHiltVersion: String = "2.48"
+val navVersion: String = "2.8.6"
 
 dependencies {
 
@@ -73,4 +78,21 @@ dependencies {
     // Coil
     implementation("io.coil-kt.coil3:coil-compose:$coilVersion")
 
+    // navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:$navVersion")
+
+    // dagger hilt
+    implementation("com.google.dagger:hilt-android:$daggerHiltVersion")
+    kapt("com.google.dagger:hilt-compiler:$daggerHiltVersion")
 }
+
+/*
+앱 수준의 build.gradle
+
+앱 모듈의 구체적인 설정을 담당한다
+android 블록을 통해 컴파일 SDK 버전, minSdk, targetSdk 등의 설정을 정의
+앱에서 사용할 Jetpack Compose 관련 설정 및 종속성을 포함
+
+*/
